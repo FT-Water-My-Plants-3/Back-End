@@ -68,7 +68,9 @@ See the full array of plants
 ##### [GET] /api/plants/:plant_id
 See the plant data (including plant owner) at a :plant_id
 <details>
+
 /api/plants/1
+
 ```JSON
 {
     "plant_id": 1,
@@ -80,12 +82,15 @@ See the plant data (including plant owner) at a :plant_id
     "plant_owner": "connie"
 }
 ```
+
 </details>
 
 ##### [POST] /api/plants/user/:user_id
 Post a plant to a user's data using their user id
 <details>
+
 /api/plants/user/2
+
 ```JSON
 {
     "plant_id": 9,
@@ -95,11 +100,15 @@ Post a plant to a user's data using their user id
     "image": null
 }
 ```
+
 </details>
 
 ##### [PUT] /api/plants/:user_id/:plant_id
 Edit a plant's information using the user id and the plant id
 <details>
+
+/api/plants/user/2/9
+
 ```JSON
 {
     "nickname": "Spikey",
@@ -107,14 +116,19 @@ Edit a plant's information using the user id and the plant id
     "h20_frequency": 1200
 }
 ```
+
 </details>
 
 ##### [DELETE] /api/plants/:user_id/:plant_id
 Remove a plant using the user id and the plant id
 <details>
+
+/api/plants/user/2/9
+
 ```JSON
 {
     "message": "Did your plant die? That's okay. I'm only judging you the slightest bit."
 }
 ```
+
 </details>

@@ -24,7 +24,7 @@ router.get('/:plant_id', checkId, (req, res, next) => {
 })
 
 // [POST] /api/plants
-router.post('/:user_id', confirmPlant, (req, res, next) => {
+router.post('/user/:user_id', confirmPlant, (req, res, next) => {
     Plants.addPlant(req.body, req.params)
     .then(plant => {
         res.status(201).json(plant)
@@ -42,7 +42,7 @@ router.put('/:user_id/:plant_id', confirmPlant, (req, res, next) => {
 })
 
 // [DELETE] /api/plants/:plant_id
-router.delete('/:plant_id', checkId, (req, res, next) => {
+router.delete('/:user_id/:plant_id', checkId, (req, res, next) => {
     Plants.remove(req.params.plant_id)
     .then(() => {
         res.status(200).json({

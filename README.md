@@ -4,27 +4,27 @@
 I've made a LOT of endpoints. Some will be useful, some are just for reference (and maybe you want them, I don't know, I'm not your mom). JSON examples listed underneath this list. Don't care about reference? These are the ones you want:
 
 ### [GET] /api/plants/:plant_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 See the plant data (including plant owner) at a :plant_id
 
 ### [POST] /api/plants/user/:user_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 Post a plant to a user's data using the user's user_id
 
 ### [PUT] /api/plants/:user_id/:plant_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 Edit a plant's information using the user id and the plant id
 
 ### [DELETE] /api/plants/:user_id/:plant_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 Remove a plant using the user id and the plant id
 
 ### [GET] /api/users/:user_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 See a specific user's information
 
 ### [GET] /api/users/:user_id/plants
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 See all plants created by a single user
 
 ### [POST] /api/users/register
@@ -34,12 +34,12 @@ Create a new user
 Logs in a user, recieves a token for authorization
 
 ### [PUT] /api/users/:user_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 Edit the user's information
 
 ## Plants
 ##### [GET] /api/plants
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 See the full array of plants
 <details>
 
@@ -105,7 +105,7 @@ See the full array of plants
 </details>
 
 ##### [GET] /api/plants/:plant_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 See the plant data (including plant owner) at a :plant_id
 <details>
 
@@ -126,7 +126,7 @@ See the plant data (including plant owner) at a :plant_id
 </details>
 
 ##### [POST] /api/plants/user/:user_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 Post a plant to a user's data using the user's user_id
 
 > *** Required information ***
@@ -154,7 +154,7 @@ Post a plant to a user's data using the user's user_id
 </details>
 
 ##### [PUT] /api/plants/:user_id/:plant_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 Edit a plant's information using the user id and the plant id
 
 > *** Required information ***
@@ -180,7 +180,7 @@ Edit a plant's information using the user id and the plant id
 </details>
 
 ##### [DELETE] /api/plants/:user_id/:plant_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 Remove a plant using the user id and the plant id
 <details>
 
@@ -196,7 +196,7 @@ Remove a plant using the user id and the plant id
 
 ## Users
 ##### [GET] /api/users
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 See the full array of users
 <details>
 
@@ -238,7 +238,7 @@ See the full array of users
 </details>
 
 ##### [GET] /api/users/:user_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 See a specific user's information
 <details>
 
@@ -253,7 +253,7 @@ See a specific user's information
 </details>
 
 ##### [GET] /api/users/:user_id/plants
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 See all plants created by a single user
 <details>
 
@@ -310,7 +310,7 @@ Logs in a user, recieves a token for authorization
 </details>
 
 ##### [PUT] /api/users/:user_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 Edit the user's information
 
 > *** Required information ***
@@ -331,7 +331,7 @@ Edit the user's information
 </details>
 
 ##### [DELETE] /api/users/:user_id
-*** RESTRICTED ENDPOINT ***
+***RESTRICTED ENDPOINT***
 Delete a user
 <details>
 

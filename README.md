@@ -5,6 +5,7 @@
 ##### [GET] /api/plants
 See the full array of plants
 <details>
+
 ```JSON
 [
     {
@@ -63,6 +64,7 @@ See the full array of plants
     }
 ]
 ```
+
 </details>
 
 ##### [GET] /api/plants/:plant_id

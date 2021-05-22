@@ -4,7 +4,7 @@ const Plants = require('./plants-model')
 const Users = require('../users/users-model')
 const { route } = require('../users/users-router')
 
-// [GET] /api/plants
+
 router.get('/', (req, res, next) => {
     Plants.findAll()
     .then(plants => {
@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
     .catch(next)
 })
 
-// [GET] /api/plants/:plant_id
+
 router.get('/:plant_id', checkId, (req, res, next) => {
     const {plant_id} = req.params
     Plants.findById(plant_id)
@@ -23,7 +23,7 @@ router.get('/:plant_id', checkId, (req, res, next) => {
     .catch(next)
 })
 
-// [POST] /api/plants
+
 router.post('/user/:user_id', confirmPlant, (req, res, next) => {
     Plants.addPlant(req.body, req.params)
     .then(plant => {
@@ -32,16 +32,16 @@ router.post('/user/:user_id', confirmPlant, (req, res, next) => {
     .catch(next)
 })
 
-// [PUT] /api/plants/:plant_id
-router.put('/:user_id/:plant_id', confirmPlant, (req, res, next) => {
+
+router.put('/:user_id/:plant_id', checkId,  confirmPlant, (req, res, next) => {
     Plants.update(req.params.plant_id, req.body)
-    .then(plant => {
+    .then(() => {
         res.status(200).json(req.body)
     })
     .catch(next)
 })
 
-// [DELETE] /api/plants/:plant_id
+
 router.delete('/:user_id/:plant_id', checkId, (req, res, next) => {
     Plants.remove(req.params.plant_id)
     .then(() => {
@@ -49,6 +49,7 @@ router.delete('/:user_id/:plant_id', checkId, (req, res, next) => {
             message: `Did your plant die? That's okay. I'm only judging you the slightest bit.`
         })
     })
+    .catch(next)
 })
 
 module.exports = router

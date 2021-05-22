@@ -31,7 +31,6 @@ function findById(plant_id) {
 }
 
 async function addPlant(plant, user_id) {
-    console.log(user_id)
     const [plant_id] = await db('plants').insert(plant, 'plant_id')
     await db('user_plants').insert({plant_id: plant_id, user_id:user_id.user_id})
     return db('plants').where({plant_id}).first()

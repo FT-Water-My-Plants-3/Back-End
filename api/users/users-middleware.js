@@ -1,5 +1,5 @@
-const e = require('express')
 const Users = require('./users-model')
+const bcrypt = require('bcryptjs')
 
 const checkId = (req, res, next) => {
     const id = req.params.user_id
@@ -24,21 +24,45 @@ const confirmUser = (req, res, next) => {
     const {username, phone_number, password} = req.body
     if (
         !username || username.trim() === null
-        || !phone_number || phone_number.trim() === null
+        || !phone_number || phone_number === null
         || !password || password.trim() === null
     ) {
         res.status(400).json({
             message: `All users must have a username, phone number, and password.`
         })
-    } else if (
-        username.length < 3 
-        || password.length < 8 
-        || 10 > phone_number.length > 10
-    ) {
-        message: `Usernames must be longer than 3 characters, passwords must be longer than 8 characters, and phone numbers must be 10 digits`
     } else {
         next()
     }
+}
+
+const confirmLoginFields = (req, res, next) => {
+    const {username, password} = req.body
+    if (
+        !username || username.trim() === null
+        || !password || password.trim() === null
+    ) {
+        res.status(422).json({
+            message: `Username and password required`
+        })
+    } else {
+        next()
+    }
+}
+
+const verifyLogin = (req, res, next) => {
+    const {username, password} = req.body
+  
+    Users.findBy({username})
+    .then(([user]) => {
+        const token = bcrypt.hashSync(password, 8)
+        if (user && bcrypt.compareSync(password, user.password)) {
+            next()
+        } else {
+            res.status(401).json({
+                message: `invalid credentials`, token
+            })
+        }
+    })
 }
 
 const verifyUniqueUsername = (req, res, next) => {
@@ -72,6 +96,8 @@ const verifyUniquePhoneNumber = (req, res, next) => {
 module.exports = {
     checkId,
     confirmUser,
+    confirmLoginFields,
+    verifyLogin,
     verifyUniqueUsername,
     verifyUniquePhoneNumber
 }

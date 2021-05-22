@@ -4,6 +4,8 @@ const cors = require('cors')
 const knex = require('knex')
 const fileUpload = require('express-fileupload')
 
+const restricted = require('./middleware/restricted')
+
 const PlantsRouter = require('./plants/plants-router')
 const UsersRouter = require('./users/users-router')
 
@@ -14,7 +16,7 @@ server.use(helmet())
 server.use(cors())
 server.use(fileUpload())
 
-server.use('/api/plants', PlantsRouter)
+server.use('/api/plants', restricted, PlantsRouter)
 server.use('/api/users', UsersRouter)
 
 server.get("/", (req, res) => {

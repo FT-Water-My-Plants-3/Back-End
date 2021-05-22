@@ -37,7 +37,7 @@ See all plants created by a single user
 Create a new user
 
 ### [POST] /api/users/login
-Logs in a user, recieves a token for authorization
+Logs in a user, receives a token for authorization
 
 ### [PUT] /api/users/:user_id
 ***RESTRICTED ENDPOINT***
@@ -307,7 +307,7 @@ Create a new user
 </details>
 
 ##### [POST] /api/users/login
-Logs in a user, recieves a token for authorization
+Logs in a user, receives a token for authorization
 
 > *** Required information ***
 > username

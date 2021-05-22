@@ -12,7 +12,6 @@ const tokenBuilder = require('../middleware/token-builder')
 const Users = require('./users-model')
 const bcrypt = require('bcryptjs')
 
-// [GET] /api/users
 router.get('/', restricted, (req, res, next) => {
     Users.findAll()
     .then(users => {
@@ -21,7 +20,6 @@ router.get('/', restricted, (req, res, next) => {
     .catch(next)
 })
 
-// [GET] /api/users/:user_id
 router.get('/:user_id', restricted, checkId, (req, res, next) => {
     const {user_id} = req.params
     Users.findById(user_id)
@@ -31,7 +29,6 @@ router.get('/:user_id', restricted, checkId, (req, res, next) => {
     .catch(next)
 })
 
-// [GET] /api/users/:user_id/:plant_id
 router.get('/:user_id/plants', restricted, checkId, (req, res, next) => {
     const {user_id} = req.params
     Users.findPlantsById(user_id)
@@ -41,10 +38,6 @@ router.get('/:user_id/plants', restricted, checkId, (req, res, next) => {
     .catch(next)
 })
 
-
-
-
-// [POST] /api/users
 router.post('/register', confirmUser,
 verifyUniqueUsername,
 verifyUniquePhoneNumber,
@@ -60,7 +53,6 @@ verifyUniquePhoneNumber,
     .catch(next)
 })
 
-// [POST] 
 router.post('/login', confirmLoginFields, verifyLogin, (req, res, next) => {
     const {username} = req.body
 
@@ -75,11 +67,9 @@ router.post('/login', confirmLoginFields, verifyLogin, (req, res, next) => {
     .catch(next)
 })
 
-// [PUT] /api/users/:user_id
 router.put('/:user_id', restricted, checkId, confirmUser, (req, res, next) => {
     const {username, password, phone_number} = req.body
     const hash = bcrypt.hashSync(password, 8)
-    // const trimUser = username.trim()
 
     Users.update(req.params, {username, password: hash, phone_number})
     .then(() => {
@@ -88,7 +78,6 @@ router.put('/:user_id', restricted, checkId, confirmUser, (req, res, next) => {
     .catch(next)
 })
 
-// [DELETE] /api/users/:user_id
 router.delete('/:user_id', restricted, checkId, (req, res, next) => {
     Users.remove(req.params.user_id)
     .then(() => {

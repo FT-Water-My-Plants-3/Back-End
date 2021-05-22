@@ -5,7 +5,6 @@ function findAll() {
 }
 
 function findBy(filter) {
-    console.log(filter)
     return db('users').where(filter).orderBy('user_id')
 }
 
@@ -27,8 +26,6 @@ async function addUser(user) {
 }
 
 function update(user_id, user) {
-    console.log({user_id})
-    console.log(user_id)
     return db('users').where(user_id).select('user_id', 'username', 'phone_number').update(user)
 }
 

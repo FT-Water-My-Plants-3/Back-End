@@ -4,7 +4,6 @@ const Plants = require('./plants-model')
 const Users = require('../users/users-model')
 const { route } = require('../users/users-router')
 
-
 router.get('/', (req, res, next) => {
     Plants.findAll()
     .then(plants => {
@@ -12,7 +11,6 @@ router.get('/', (req, res, next) => {
     })
     .catch(next)
 })
-
 
 router.get('/:plant_id', checkId, (req, res, next) => {
     const {plant_id} = req.params
@@ -23,7 +21,6 @@ router.get('/:plant_id', checkId, (req, res, next) => {
     .catch(next)
 })
 
-
 router.post('/user/:user_id', confirmPlant, (req, res, next) => {
     Plants.addPlant(req.body, req.params)
     .then(plant => {
@@ -32,7 +29,6 @@ router.post('/user/:user_id', confirmPlant, (req, res, next) => {
     .catch(next)
 })
 
-
 router.put('/:user_id/:plant_id', checkId,  confirmPlant, (req, res, next) => {
     Plants.update(req.params.plant_id, req.body)
     .then(() => {
@@ -40,7 +36,6 @@ router.put('/:user_id/:plant_id', checkId,  confirmPlant, (req, res, next) => {
     })
     .catch(next)
 })
-
 
 router.delete('/:user_id/:plant_id', checkId, (req, res, next) => {
     Plants.remove(req.params.plant_id)

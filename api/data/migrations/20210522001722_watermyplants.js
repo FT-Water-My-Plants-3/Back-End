@@ -11,7 +11,7 @@ exports.up = function(knex) {
         tbl.increments('plant_id')
         tbl.string('nickname').notNullable()
         tbl.string('species').notNullable()
-        tbl.integer('h20_frequency').notNullable()
+        tbl.integer('h2o_frequency').notNullable()
         tbl.string('image')
     })
     .createTable('user_plants', tbl => {

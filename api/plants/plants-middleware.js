@@ -20,11 +20,11 @@ const checkId = (req, res, next) => {
 }
 
 const confirmPlant = (req, res, next) => {
-    const {nickname, species, h20_frequency} = req.body
+    const {nickname, species, h2o_frequency} = req.body
     if (
         !nickname || nickname.trim() === null
         || !species || species.trim() === null
-        || !h20_frequency
+        || !h2o_frequency
     ) {
         res.status(400).json({
             message: `All plants must have a nickname, species, and watering frequency.`

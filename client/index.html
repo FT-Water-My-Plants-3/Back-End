@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="index.js"></script>
+  <title>Auth</title>
+  <style>
+    form {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form div {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="" id="registerForm">
+    Username<input type="text" id="usernameInput">
+    Password<input type="text" id="passwordInput">
+    <div>
+      <button id="registerBtn">register</button>
+      <button id="loginBtn">login</button>
+      <button id="logoutBtn">logout</button>
+    </div>
+    <div id="message"></div>
+  </form>
+
+  <form action="" id="newPlantForm">
+      nickname<input type="text" id="nicknameInput"/>
+      species<input type="text" id="speciesInput"/>
+      h2o<input type="number" id="h2oInput"/>
+      image_url<input type="text" id="image_urlInput"/>
+      Select image<input type="file" id="img" name="img" accept="image/*">
+    <button id="submitPlant">submit</button>
+
+
+  </form>
+</body>
+
+</html>

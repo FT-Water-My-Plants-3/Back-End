@@ -59,8 +59,10 @@ router.post('/login', confirmLoginFields, verifyLogin, (req, res, next) => {
     Users.findBy({username})
     .then(([user]) => {
         const token = tokenBuilder(user)
+        const user_id = user.user_id
         res.json({
             message: `Login successful`,
+            user_id,
             token
         })
     })

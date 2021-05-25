@@ -30,7 +30,9 @@ router.post('/user/:user_id', confirmPlant, (req, res, next) => {
 })
 
 router.put('/:plant_id', checkId,  confirmPlant, (req, res, next) => {
-    Plants.update(req.params.plant_id, req.body)
+    const {nickname, species, h2o_frequency, image} = req.body
+    
+    Plants.update(req.params.plant_id, {nickname, species, h2o_frequency, image})
     .then(() => {
         res.status(200).json(req.body)
     })
@@ -45,6 +47,14 @@ router.delete('/:user_id/:plant_id', checkId, (req, res, next) => {
         })
     })
     .catch(next)
+})
+
+router.use((err, req, res, next) => { // eslint-disable-line
+    res.status(err.status || 500).json({
+        contact_connie: `She's got the bug spray`,
+        message: err.message,
+        stack: err.stack,
+    })
 })
 
 module.exports = router

@@ -29,7 +29,7 @@ router.post('/user/:user_id', confirmPlant, (req, res, next) => {
     .catch(next)
 })
 
-router.put('/:user_id/:plant_id', checkId,  confirmPlant, (req, res, next) => {
+router.put('/:plant_id', checkId,  confirmPlant, (req, res, next) => {
     Plants.update(req.params.plant_id, req.body)
     .then(() => {
         res.status(200).json(req.body)

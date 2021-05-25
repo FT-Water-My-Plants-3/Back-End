@@ -34,6 +34,41 @@ exports.seed = function(knex) {
           username: "daniel",
           phone_number: "6668675309",
           password: "$2a$08$eqv6ybVuQ6P//42MDE60hOxPW2wsruFyk7n1sulsL8RgeLak1bKZ."
+        },
+        {
+          "username": "alexedwards",
+          "phone_number": "1111111111",
+          "password": "$2a$08$mGcMOv19lgGXRryGJB.2V.28v8G0vxg7YEVYDo9tAMNALctWRcSY2"
+        },
+        {
+          "username": "jacobfranklin",
+          "phone_number": "2222222222",
+          "password": "$2a$08$VrVJss.o7RNAxiirjdOlOun8IOV6vEKBRDhB.elMQZ6TcjK729HFG"
+        },
+        {
+          "username": "michaelhabermas",
+          "phone_number": "3333333333",
+          "password": "$2a$08$pCDSa.x/f1YdpGitlFjfYuSTMx.zTLYkmLBxm430v40TB/bB6nEde"
+        },
+        {
+          "username": "spencerpatterson",
+          "phone_number": "4444444444",
+          "password": "$2a$08$S5jj9BEQvO4FfxPMeMSHWu57dA7bj5pP.4JqtBWqW1Vdmqo.gBh1q"
+        },
+        {
+          "username": "anthony_miller",
+          "phone_number": "1234567890",
+          "password": "$2a$08$g/tTSBrEovi7Fe/s9cGCkO6LCW.6YSq4FDG.m7g8NFAwgSGLZKfsy"
+        },
+        {
+          "username": "adam_pattison",
+          "phone_number": "2345678901",
+          "password": "$2a$08$RyFuLa5malFiqfxTo3YSh..bthCC0bNKCr0xUCkqMOd1b/lhsJr1C"
+        },
+        {
+          "username": "zachary_cooremans",
+          "phone_number": "3456789012",
+          "password": "$2a$08$YCSOKz59ie/s..YTW9.N1eGRrQfFGT3BHNXGJYi4FRFLW9E03VLXC"
         }
       ]);
     });

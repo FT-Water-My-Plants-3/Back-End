@@ -22,7 +22,8 @@ function findPlantsById(user_id) {
 
 async function addUser(user) {
     const [user_id] = await db('users').insert(user, 'user_id')
-    return db('users').where({user_id}).select('user_id', 'username', 'phone_number').first()
+    return db('users').where({user_id}).first()
+    // return db('users').where({user_id}).select('user_id', 'username', 'phone_number').first()
 }
 
 function update(user_id, user) {

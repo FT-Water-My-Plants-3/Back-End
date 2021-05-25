@@ -63,7 +63,7 @@ router.post('/login', confirmLoginFields, verifyLogin, (req, res, next) => {
         res.json({
             message: `Login successful`,
             user_id,
-            token
+            token 
         })
     })
     .catch(next)

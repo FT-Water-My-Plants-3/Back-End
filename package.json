@@ -12,6 +12,7 @@
     "latest": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
+    "remigrate": "knex migrate:rollback && knex migrate:latest",
     "reup": "knex migrate:rollback && knex migrate:latest && knex seed:run",
     "migrateh": "heroku run knex migrate:latest -a ft-water-my-plants-3",
     "rollbackh": "heroku run knex migrate:rollback -a ft-water-my-plants-3",

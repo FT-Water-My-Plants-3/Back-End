@@ -12,7 +12,7 @@ exports.up = function(knex) {
         tbl.string('nickname').notNullable()
         tbl.string('species').notNullable()
         tbl.integer('h2o_frequency').notNullable()
-        tbl.string('image')
+        tbl.string('image').defaultTo('https://images.unsplash.com/photo-1509223197845-458d87318791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1118&q=80')
     })
     .createTable('user_plants', tbl => {
         tbl.increments('up_id')

@@ -42,7 +42,8 @@ Logs in a user, receives a token for authorization
 ### [PUT] /api/users/:user_id
 ***RESTRICTED ENDPOINT***
 
-Edit the user's information
+Edit the user's phone_number and password only
+Need to send back username, phone_number, and password
 
 ## Plants
 ##### [GET] /api/plants
@@ -319,7 +320,8 @@ Logs in a user, receives a token for authorization
 ##### [PUT] /api/users/:user_id
 ***RESTRICTED ENDPOINT***
 
-Edit the user's information
+Edit the user's phone_number and password only
+Need to send back username, phone_number, and password
 
 > *** Required information ***
 > username

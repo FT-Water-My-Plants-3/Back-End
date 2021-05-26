@@ -118,8 +118,6 @@ See the full array of plants
 See the plant data (including plant owner) at a :plant_id
 <details>
 
-/api/plants/1
-
 ```JSON
 {
     "plant_id": 1,
@@ -149,8 +147,6 @@ Post a plant to a user's data using the user's user_id
 
 <details>
 
-/api/plants/user/2
-
 ```JSON
 {
     "plant_id": 9,
@@ -178,8 +174,6 @@ Edit a plant's information using the plant id
 
 <details>
 
-/api/plants/user/2/9
-
 ```JSON
 {
     "nickname": "Spikey",
@@ -195,8 +189,6 @@ Edit a plant's information using the plant id
 
 Remove a plant using the user id and the plant id
 <details>
-
-/api/plants/user/2/9
 
 ```JSON
 {
